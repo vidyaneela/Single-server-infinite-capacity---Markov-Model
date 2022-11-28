@@ -19,10 +19,44 @@ This is a queuing model in which the arrival is Marcovian and departure distribu
 
 
 ## Experiment:
+![204251380-04426460-bc25-4fe8-a173-254372d261ac](https://user-images.githubusercontent.com/94169318/204258900-b57bd6f8-f84e-4a81-b0ff-1e9c3b8cd363.jpg)
 
 
 ## Program
+```
+  Developed by: Vidyaneela.M
+  Reference No. 212221230120
+  ```
+```
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu=1/(ser_time+Robot_time)
+print("--------------------------------------------------------------")
+print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
+print("--------------------------------------------------------------")
+print("The mean arrival rate per second : %0.2f "%lam)
+print("The mean service rate per second : %0.2f "%mu)
+if (lam <  mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu
+    Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor :  %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor : %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("---------------------------------------------------------------")
+```
 
 
-## Output  and result
+## Output 
+![204251684-e3ef10ca-8f7a-4547-9a24-d9944313d9d5](https://user-images.githubusercontent.com/94169318/204259162-986d72fb-03e5-4686-b530-6fb30623f6ea.png)
 
+## Result
+Single server with infinite capacity (M/M/1):(oo/FIFO) has done successfully using Visual components.
